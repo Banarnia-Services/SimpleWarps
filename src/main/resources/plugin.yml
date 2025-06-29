@@ -1,0 +1,7 @@
+name: SimpleWarps
+version: '${project.version}'
+main: de.banarnia.simplewarps.SimpleWarps
+prefix: SimpleWarps
+author: Banarnia
+description: Warp-Plugin with usability in mind.
+api-version: 1.13
