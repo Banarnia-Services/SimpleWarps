@@ -1,0 +1,21 @@
+# Config version: Do not touch this.
+version: 1.0
+
+# Language file. Will look for a file called <ARG>.yml in the lang folder.
+# If the file does not exist, it will be automatically created for you to edit.
+# Example: 'en' will look for /lang/en.yml
+language: en
+
+# Warmup time (in s) to wait before teleporting the player.
+# Set to 0 to disable warmup.
+teleport-warmup-time: 0
+
+# Cancel teleport warmup if the player moves.
+cancel-warmup-on-move: false
+
+# Cooldown time (in s) to prevent further warp commands from a player.
+# Set to 0 to disable cooldown.
+warp-cooldown: 10
+
+# Enable debug messages.
+debug: false
