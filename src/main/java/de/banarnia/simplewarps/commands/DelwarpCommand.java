@@ -10,7 +10,7 @@ import de.banarnia.simplewarps.manager.Warp;
 import de.banarnia.simplewarps.manager.WarpManager;
 
 @CommandAlias("delwarp")
-@CommandPermission("simplewarps.delwarp")
+@CommandPermission("simplewarps.admin")
 public class DelwarpCommand extends BaseCommand {
 
     private WarpManager manager;
@@ -22,8 +22,7 @@ public class DelwarpCommand extends BaseCommand {
     @Default
     @CommandCompletion("@warps")
     public void deleteWarp(CommandIssuer sender, Warp warp) {
-        manager.deleteWarp(warp);
-        // Todo message.
+        manager.executeDelwarp(sender.getIssuer(), warp);
     }
 
 }

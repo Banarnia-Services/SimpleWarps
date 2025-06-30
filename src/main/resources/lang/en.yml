@@ -1,0 +1,44 @@
+Message:
+  prefix: §8[§6SimpleWarps§8]§7
+  command-error-console-not-supported: '%prefix% §cThis command may not be executed
+    by console.'
+  command-info-warp-config-reloaded: '%prefix% The config has been reloaded.'
+  command-info-warp-teleport: '%prefix% Warping to §e%warp%§7...'
+  command-info-warp-others: '%prefix% Warping §e%player% §7to §e%warp%§7.'
+  command-info-warp-warmup: '%prefix% You will be warped to §e%warp% §7in §e%time%s§7.'
+  command-error-permission: '%prefix% §cYou do not have the permission for that.'
+  command-error-warp-warmup-abort: '%prefix% §cWarp aborted...'
+  command-error-warp-cooldown: '%prefix% §cYou can''t warp again within the next §e%time%s§c.'
+  command-error-warp-not-found: '%prefix% §cCould not find a warp with the name §e%warp%§c.'
+  command-error-warp-disabled: '%prefix% §cThis warp is disabled.'
+  command-error-warp-location-not-loaded: '%prefix% §cYou can''t warp there because
+    the world is not loaded.'
+  command-error-warp-failed: '%prefix% §cCouldn''t warp to the destination.'
+  command-info-setwarp-updated: '%prefix% The location of warp §e%warp% §7has been
+    updated.'
+  command-info-setwarp-created: '%prefix% The warp §e%warp% §7has been created.'
+  command-info-delwarp-finished: '%prefix% The warp §e%warp% §7has been deleted.'
+  gui-icon-selection-title: §7Select a new icon
+  gui-save-name: §aSave
+  gui-cancel-name: §cCancel
+  gui-confirmation-title: §7Delete warp?
+  gui-warp-name: §a%warp_name%
+  gui-warp-lore: |-
+    §7World: §e%warp_worldname%
+
+    §eClick to warp
+  gui-warp-lore-admin: |-
+    §7World: §e%warp_worldname%
+    §7%year%-%month%-%day% %hour%:%minute%:%second%
+
+    §7Enabled: %enabled%
+    §7Permission required: %permission%
+
+    §eLeftclick to warp
+    §eShift-Leftclick to edit the warp
+    §cRightclick to delete
+  gui-warp-settings-icon: §aChange warp icon
+  gui-warp-settings-enable: §aEnable or disable warp
+  gui-warp-settings-permission: '§aRequire permission: §e%permission%'
+  gui-warp-page-previous: §cBack
+  gui-warp-page-next: §aNext

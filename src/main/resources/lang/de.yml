@@ -1,0 +1,41 @@
+Message:
+  prefix: §8[§6SimpleWarps§8]§7
+  command-error-console-not-supported: '%prefix% §cDieser Befehl kann nicht von der Konsole ausgeführt werden.'
+  command-info-warp-config-reloaded: '%prefix% Die Konfiguration wurde neu geladen.'
+  command-info-warp-teleport: '%prefix% Teleportiere zu Warp §e%warp%§7...'
+  command-info-warp-others: '%prefix% Teleportiere §e%player% §7zu Warp §e%warp%§7.'
+  command-info-warp-warmup: '%prefix% Du wirst zum Warp §e%warp% §7in §e%time%s§7 teleportiert.'
+  command-error-permission: '%prefix% §cDafür hast du keine Rechte.'
+  command-error-warp-warmup-abort: '%prefix% §cTeleport zum Warp abgebrochen...'
+  command-error-warp-cooldown: '%prefix% §cDu kannst keinen weiteren Warp für die nächsten §e%time%s§c benutzen.'
+  command-error-warp-not-found: '%prefix% §cEs konnte kein Warp mit dem Namen §e%warp%§c gefunden werden.'
+  command-error-warp-disabled: '%prefix% §cDieser Warp ist deaktiviert.'
+  command-error-warp-location-not-loaded: '%prefix% §cDu kannst den Warp nicht benutzen, da die Welt nicht geladen ist.'
+  command-error-warp-failed: '%prefix% §cTeleport zum Warp konnte nicht ausgeführt werden.'
+  command-info-setwarp-updated: '%prefix% Der Standort von Warp §e%warp% §7wurde aktualisiert.'
+  command-info-setwarp-created: '%prefix% Der Warp §e%warp% §7wurde erstellt.'
+  command-info-delwarp-finished: '%prefix% Der Warp §e%warp% §7wurde gelöscht.'
+  gui-icon-selection-title: §7Neues Icon auswählen
+  gui-save-name: §aSpeichern
+  gui-cancel-name: §cAbbrechen
+  gui-confirmation-title: §7Warp löschen?
+  gui-warp-name: §a%warp_name%
+  gui-warp-lore: |-
+    §7Welt: §e%warp_worldname%
+
+    §eKlicken zum Teleportieren
+  gui-warp-lore-admin: |-
+    §7Welt: §e%warp_worldname%
+    §7%day%-%month%-%year% %hour%:%minute%:%second%
+
+    §7Aktiviert: %enabled%
+    §7Permission benötigt: %permission%
+
+    §eLinksklick zum Teleportieren
+    §eShift-Linksklick zum Bearbeiten
+    §cRechtsklick zum Löschen
+  gui-warp-settings-icon: §aWarp Icon ändern
+  gui-warp-settings-enable: §aWarp de-/aktivieren
+  gui-warp-settings-permission: '§aPermission erforderlich: §e%permission%'
+  gui-warp-page-previous: §cZurück
+  gui-warp-page-next: §aVor

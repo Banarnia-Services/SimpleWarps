@@ -6,57 +6,51 @@ public enum Message implements ILanguage {
     PREFIX("§8[§6SimpleWarps§8]§7"),
     COMMAND_ERROR_CONSOLE_NOT_SUPPORTED("%prefix% §cThis command may not be executed by console."),
 
-    // COMMAND /home
-    COMMAND_INFO_HOME_CONFIG_RELOADED("%prefix% The config has been reloaded."),
-    COMMAND_INFO_HOME_TELEPORT("%prefix% Teleporting to §e%home%§7..."),
-    COMMAND_INFO_HOME_WARMUP_STARTED("%prefix% You will be teleported in §e%time%s§7."),
-    COMMAND_ERROR_HOME_CANCELED("%prefix% §cYou cannot do that right now."),
-    COMMAND_ERROR_HOME_NOT_FOUND("%prefix% §cCould not find a home with the name §e%home%§c."),
-    COMMAND_ERROR_HOME_EMPTY("%prefix% §cYou do not have any homes."),
-    COMMAND_ERROR_HOME_OTHERS_NOT_FOUND("%prefix% §cCould not find a home with the name §e%home%§7 for player §e%player%§7."),
-    COMMAND_ERROR_HOME_LIMIT_EXCEEDED("%prefix% §cYou can't use any homes because you exceeded the home limit."),
-    COMMAND_ERROR_HOME_COOLDOWN("%prefix% §cYou can't do that again within the next §e%time%s§c."),
-    COMMAND_ERROR_HOME_WARMUP_ABORT("%prefix% §eTeleport aborted..."),
-    COMMAND_ERROR_HOME_NOT_SPECIFIED("%prefix% §cYou need to specify a home name."),
-    COMMAND_ERROR_HOME_LOCATION_NOT_LOADED("%prefix% §cYou can't teleport to this home because the world is not loaded."),
+    // Command /warp
+    COMMAND_INFO_WARP_CONFIG_RELOADED("%prefix% The config has been reloaded."),
+    COMMAND_INFO_WARP_TELEPORT("%prefix% Warping to §e%warp%§7..."),
+    COMMAND_INFO_WARP_OTHERS("%prefix% Warping §e%player% §7to §e%warp%§7."),
+    COMMAND_INFO_WARP_WARMUP("%prefix% You will be warped to §e%warp% §7in §e%time%s§7."),
+    COMMAND_ERROR_PERMISSION("%prefix% §cYou do not have the permission for that."),
+    COMMAND_ERROR_WARP_WARMUP_ABORT("%prefix% §cWarp aborted..."),
+    COMMAND_ERROR_WARP_COOLDOWN("%prefix% §cYou can't warp again within the next §e%time%s§c."),
+    COMMAND_ERROR_WARP_NOT_FOUND("%prefix% §cCould not find a warp with the name §e%warp%§c."),
+    COMMAND_ERROR_WARP_DISABLED("%prefix% §cThis warp is disabled."),
+    COMMAND_ERROR_WARP_LOCATION_NOT_LOADED("%prefix% §cYou can't warp there because the world is not loaded."),
+    COMMAND_ERROR_WARP_FAILED("%prefix% §cCouldn't warp to the destination."),
 
-    // Import
-    COMMAND_INFO_HOME_IMPORT_STARTED("%prefix% §7Starting import from §e%source%§7."),
-    COMMAND_ERROR_HOME_IMPORT_INVALID_IMPORTSOURCE("§cThis source is not implemented."),
+    // Command /setwarp
+    COMMAND_INFO_SETWARP_UPDATED("%prefix% The location of warp §e%warp% §7has been updated."),
+    COMMAND_INFO_SETWARP_CREATED("%prefix% The warp §e%warp% §7has been created."),
 
-    // COMMAND /sethome
-    COMMAND_ERROR_SETHOME_UNDERSCORE("%prefix% §cThe home name may not contain underscores."),
-    COMMAND_ERROR_SETHOME_LIMIT_REACHED("%prefix% §cYou don't have any homes left."),
-    COMMAND_ERROR_SETHOME_LIMIT_EXCEEDED("%prefix% §cYou can't edit any homes because you exceeded the home limit."),
-    COMMAND_INFO_SETHOME_RELOCATED("%prefix% You relocated the home §e%home% §7to your current location."),
-    COMMAND_ERROR_SETHOME_RELOCATION_FAILED("%prefix% §cFailed to relocate the home."),
-    COMMAND_ERROR_SETHOME_CANCELED("%prefix% §cYou cannot create the home §e%home% §cright now."),
-    COMMAND_INFO_SETHOME_CREATED("%prefix% Successfully created a new home §e%home%§7."),
-    COMMAND_ERROR_SETHOME_FAILED("%prefix% §cFailed to create a new home."),
-
-    // COMMAND /delhome
-    COMMAND_INFO_DELHOME_SUCCESS("%prefix% Successfully deleted the home §e%home%§7."),
-    COMMAND_ERROR_DELHOME_CANCELED("%prefix% §cYou cannot delete the home §e%home% §cright now."),
-    COMMAND_ERROR_DELHOME_FAILED("%prefix% §cFailed to delete the home."),
+    // Command /delwarp
+    COMMAND_INFO_DELWARP_FINISHED("%prefix% The warp §e%warp% §7has been deleted."),
 
     // GUI
     GUI_ICON_SELECTION_TITLE("§7Select a new icon"),
     GUI_SAVE_NAME("§aSave"),
     GUI_CANCEL_NAME("§cCancel"),
-    GUI_ICON_UPDATE_FAILED("%prefix% §cFailed to update the home icon."),
-    GUI_CONFIRMATION_TITLE("§7Delete home?"),
-    GUI_HOME_NAME("§a%home_name%"),
-    GUI_HOME_LORE(
-            "§7World: §e%home_worldname%\n" +
-            "§7%year%-%month%-%day% %hour%:%minute%:%second%\n" +
+    GUI_CONFIRMATION_TITLE("§7Delete warp?"),
+    GUI_WARP_NAME("§a%warp_name%"),
+    GUI_WARP_LORE(
+            "§7World: §e%warp_worldname%\n" +
             "\n" +
-            "§eLeftclick to teleport\n" +
-            "§eShift-Leftclick to edit the icon\n" +
-            "§cRightclick to delete"),
-    GUI_HOME_INFO_NAME("§e%player%"),
-    GUI_HOME_INFO_LORE("§7Homes: §e%homes_current%§7/§a%homes_limit%"),
-    GUI_HOME_PAGE_PREVIOUS("§cBack"),
-    GUI_HOME_PAGE_NEXT("§aNext")
+            "§eClick to warp"),
+    GUI_WARP_LORE_ADMIN(
+            "§7World: §e%warp_worldname%\n" +
+                    "§7%year%-%month%-%day% %hour%:%minute%:%second%\n" +
+                    "\n" +
+                    "§7Enabled: %enabled%\n" +
+                    "§7Permission required: %permission%\n" +
+                    "\n" +
+                    "§eLeftclick to warp\n" +
+                    "§eShift-Leftclick to edit the warp\n" +
+                    "§cRightclick to delete"),
+    GUI_WARP_SETTINGS_ICON("§aChange warp icon"),
+    GUI_WARP_SETTINGS_ENABLE("§aEnable or disable warp"),
+    GUI_WARP_SETTINGS_PERMISSION("§aRequire permission: §e%permission%"),
+    GUI_WARP_PAGE_PREVIOUS("§cBack"),
+    GUI_WARP_PAGE_NEXT("§aNext")
     ;
 
     String defaultMessage, message;

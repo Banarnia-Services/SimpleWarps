@@ -3,7 +3,6 @@ package de.banarnia.simplewarps.manager;
 import de.banarnia.api.UtilString;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.entity.Player;
@@ -26,7 +25,7 @@ public class Warp implements ConfigurationSerializable {
     private float yaw,pitch;
 
     public Warp(String name, Location location) {
-        this(name, true, System.currentTimeMillis(), Material.GRASS_BLOCK.toString(), false,
+        this(name, true, System.currentTimeMillis(), null, false,
              location.getWorld().getName(), location.getX(), location.getY(), location.getZ(),
              location.getYaw(), location.getPitch());
     }
@@ -56,6 +55,9 @@ public class Warp implements ConfigurationSerializable {
      */
     public boolean teleport(Player player, PlayerTeleportEvent.TeleportCause cause) {
         if (!isEnabled() || !isLocationLoaded())
+            return false;
+
+        if (requiresPermission && !player.hasPermission("simplewarps.warp." + name))
             return false;
 
         return cause != null ? player.teleport(getLocation(), cause) : player.teleport(getLocation());
@@ -191,6 +193,10 @@ public class Warp implements ConfigurationSerializable {
         return enabled;
     }
 
+    public boolean requiresPermission() {
+        return requiresPermission;
+    }
+
     public double getX() {
         return x;
     }
@@ -221,5 +227,17 @@ public class Warp implements ConfigurationSerializable {
 
     public String getWorldName() {
         return worldName;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public void setRequiresPermission(boolean requiresPermission) {
+        this.requiresPermission = requiresPermission;
     }
 }
